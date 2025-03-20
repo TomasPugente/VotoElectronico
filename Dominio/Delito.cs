@@ -12,5 +12,10 @@ namespace Dominio
         public String Nombre { get; set; }
         public String Ley { get; set; }
 
+        public override string ToString()
+        {
+            return Nombre +", "+ Ley;
+        }
+
     }
 }

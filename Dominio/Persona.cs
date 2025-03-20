@@ -16,5 +16,9 @@ namespace Dominio
         public Direccion Direccion { get; set; }
         public String Nacionalidad { get; set; }
 
+        public override string ToString()
+        {
+            return Nombre+ ", " + Apellido + ", " + Dni +", "+ ", "+ fechaDeNacimiento + ", " + Nacionalidad;
+        }
     }
 }

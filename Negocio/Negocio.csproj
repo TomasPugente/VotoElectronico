@@ -41,6 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoDatos.cs" />
+    <Compile Include="NegocioAntecedentesPenales.cs" />
+    <Compile Include="NegocioCandidato.cs" />
+    <Compile Include="NegocioDelito.cs" />
+    <Compile Include="NegocioDireccion.cs" />
+    <Compile Include="NegocioLista.cs" />
+    <Compile Include="NegocioPersona.cs" />
+    <Compile Include="NegocioSede.cs" />
+    <Compile Include="NegocioVotante.cs" />
+    <Compile Include="NegocioVoto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

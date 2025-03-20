@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +26,8 @@ namespace Inicio
 
         private void frmServicioElecciones_Load(object sender, EventArgs e)
         {
+            NegocioAntecedentesPenales negocio = new NegocioAntecedentesPenales();
+            List < AntecedentesPenales > ante= negocio.listar();
             pbxBandera.Load("https://i.pinimg.com/736x/a5/37/05/a53705b9a77b24e5b04b99e06b737a60.jpg");
         }
 
