@@ -38,6 +38,8 @@
             this.pbxBandera = new System.Windows.Forms.PictureBox();
             this.btnSeccionSedes = new System.Windows.Forms.Button();
             this.btnRegistroCivil = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBandera)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.btnIniciarSesionAdmin.Location = new System.Drawing.Point(104, 94);
             this.btnIniciarSesionAdmin.Name = "btnIniciarSesionAdmin";
             this.btnIniciarSesionAdmin.Size = new System.Drawing.Size(156, 80);
-            this.btnIniciarSesionAdmin.TabIndex = 1;
+            this.btnIniciarSesionAdmin.TabIndex = 0;
             this.btnIniciarSesionAdmin.Text = "Inicio Sesion Admin";
             this.btnIniciarSesionAdmin.UseVisualStyleBackColor = true;
             this.btnIniciarSesionAdmin.Click += new System.EventHandler(this.btnIniciarSesionAdmin_Click);
@@ -66,7 +68,7 @@
             this.btnEditarListas.Location = new System.Drawing.Point(1012, 324);
             this.btnEditarListas.Name = "btnEditarListas";
             this.btnEditarListas.Size = new System.Drawing.Size(156, 80);
-            this.btnEditarListas.TabIndex = 2;
+            this.btnEditarListas.TabIndex = 6;
             this.btnEditarListas.Text = "Editar Listas";
             this.btnEditarListas.UseVisualStyleBackColor = true;
             // 
@@ -75,7 +77,7 @@
             this.btnRegistrarVotantes.Location = new System.Drawing.Point(104, 324);
             this.btnRegistrarVotantes.Name = "btnRegistrarVotantes";
             this.btnRegistrarVotantes.Size = new System.Drawing.Size(156, 80);
-            this.btnRegistrarVotantes.TabIndex = 3;
+            this.btnRegistrarVotantes.TabIndex = 2;
             this.btnRegistrarVotantes.Text = "Registrar Votantes";
             this.btnRegistrarVotantes.UseVisualStyleBackColor = true;
             // 
@@ -84,7 +86,7 @@
             this.btnRegistrarCandidatos.Location = new System.Drawing.Point(104, 439);
             this.btnRegistrarCandidatos.Name = "btnRegistrarCandidatos";
             this.btnRegistrarCandidatos.Size = new System.Drawing.Size(156, 80);
-            this.btnRegistrarCandidatos.TabIndex = 4;
+            this.btnRegistrarCandidatos.TabIndex = 3;
             this.btnRegistrarCandidatos.Text = "Registrar Candidatos";
             this.btnRegistrarCandidatos.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +95,7 @@
             this.btnIniciarElecciones.Location = new System.Drawing.Point(1012, 94);
             this.btnIniciarElecciones.Name = "btnIniciarElecciones";
             this.btnIniciarElecciones.Size = new System.Drawing.Size(156, 80);
-            this.btnIniciarElecciones.TabIndex = 5;
+            this.btnIniciarElecciones.TabIndex = 4;
             this.btnIniciarElecciones.Text = "Iniciar Elecciones";
             this.btnIniciarElecciones.UseVisualStyleBackColor = true;
             // 
@@ -102,9 +104,10 @@
             this.btnAntecedentesPenales.Location = new System.Drawing.Point(1012, 205);
             this.btnAntecedentesPenales.Name = "btnAntecedentesPenales";
             this.btnAntecedentesPenales.Size = new System.Drawing.Size(156, 80);
-            this.btnAntecedentesPenales.TabIndex = 6;
+            this.btnAntecedentesPenales.TabIndex = 5;
             this.btnAntecedentesPenales.Text = "Antecedentes Penales";
             this.btnAntecedentesPenales.UseVisualStyleBackColor = true;
+            this.btnAntecedentesPenales.Click += new System.EventHandler(this.btnAntecedentesPenales_Click);
             // 
             // pbxBandera
             // 
@@ -121,19 +124,38 @@
             this.btnSeccionSedes.Location = new System.Drawing.Point(1012, 439);
             this.btnSeccionSedes.Name = "btnSeccionSedes";
             this.btnSeccionSedes.Size = new System.Drawing.Size(156, 80);
-            this.btnSeccionSedes.TabIndex = 8;
+            this.btnSeccionSedes.TabIndex = 7;
             this.btnSeccionSedes.Text = "Seccion Sedes";
             this.btnSeccionSedes.UseVisualStyleBackColor = true;
-            this.btnSeccionSedes.Click += new System.EventHandler(this.btnSeccionSedes_Click);
             // 
             // btnRegistroCivil
             // 
             this.btnRegistroCivil.Location = new System.Drawing.Point(104, 205);
             this.btnRegistroCivil.Name = "btnRegistroCivil";
             this.btnRegistroCivil.Size = new System.Drawing.Size(156, 80);
-            this.btnRegistroCivil.TabIndex = 9;
+            this.btnRegistroCivil.TabIndex = 1;
             this.btnRegistroCivil.Text = "Registro Civil";
             this.btnRegistroCivil.UseVisualStyleBackColor = true;
+            this.btnRegistroCivil.Click += new System.EventHandler(this.btnRegistroCivil_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(402, 491);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 80);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Donde Votar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(669, 491);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 80);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Salir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmServicioElecciones
             // 
@@ -141,6 +163,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1273, 627);
+            this.ControlBox = false;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRegistroCivil);
             this.Controls.Add(this.btnSeccionSedes);
             this.Controls.Add(this.pbxBandera);
@@ -173,6 +198,8 @@
         private System.Windows.Forms.PictureBox pbxBandera;
         private System.Windows.Forms.Button btnSeccionSedes;
         private System.Windows.Forms.Button btnRegistroCivil;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

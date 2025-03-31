@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select p.Id idPersona, p.nombre nombre, p.apellido apellido, p.dni dni, p.fechaDeNacimiento fechaDeNacimiento, p.Nacionalidad nacionalidad,d.Id idDireccion, d.calle calle, d.numero numero, d.localidad localidad, d.provincia, c.Id idCandidato, c.FechaPostulacion FechaPostulacion from Candidato c, Persona p, Direccion d, sede s where p.idDireccion = d.Id and c.idPersona=p.id ;");
+                datos.setearConsulta("select p.Id idPersona, p.nombre nombre, p.apellido apellido, p.dni dni, p.fechaDeNacimiento fechaDeNacimiento, p.Nacionalidad nacionalidad,d.Id idDireccion, d.calle calle, d.numero numero, d.localidad localidad, d.provincia, c.Id idCandidato, c.FechaPostulacion FechaPostulacion, c.ImagenCandidato imagenCandidato from Candidato c, Persona p, Direccion d, sede s where p.idDireccion = d.Id and c.idPersona=p.id ;");
                 datos.EjecutarLectura();
 
                 cargarDatos();
@@ -46,6 +46,7 @@ namespace Negocio
 
                 c.IdCandidato = (int)datos.Lector["id"];
                 c.FechaPostulacion = (DateTime)datos.Lector["fechaPostulacion"];
+                c.ImagenCandidato = (String)datos.Lector["ImagenCandidato"];
                 c.Id = (int)datos.Lector["idPersona"];
                 c.Nombre = (String)datos.Lector["nombre"];
                 c.Apellido = (String)datos.Lector["Apellido"];

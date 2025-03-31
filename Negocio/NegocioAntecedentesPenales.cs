@@ -67,5 +67,26 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public List<AntecedentesPenales> listarPorPersona(Persona persona)
+        {
+            try
+            {
+                datos.setearConsulta("select a.id id,  a.fechaDelitoCometido fechaDelitoCometido, a.descripcion descripcion, d.id idDelito, d.nombre nombreDelito, d.Ley ley, p.id idPersona, p.Nombre nombrePersona, p.Apellido apellido, p.Dni dni, p.FechaDeNacimiento fechaDeNacimiento, p.Nacionalidad nacionalidad from delito d, persona p, AntecedentesPenales a where a.idPersona=p.Id and  a.idDelito= d.id and a.idPersona= @idPersona;");
+                datos.setearParametros("@idPersona", persona.Id);
+                datos.EjecutarLectura();
+                cargarDatos();
+                return listaAntecedentesPenales;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
     }
 }

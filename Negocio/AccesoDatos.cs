@@ -46,5 +46,10 @@ namespace Negocio
             Comando.Parameters.Clear();
             Conexion.Close();
         }
+
+        public void setearParametros(string nombre, object objeto)
+        {
+            Comando.Parameters.AddWithValue(nombre, objeto);
+        }
     }
 }

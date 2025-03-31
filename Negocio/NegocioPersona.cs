@@ -68,5 +68,65 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void editar(Persona p)
+        {
+            try
+            {
+                datos.setearConsulta("update Persona set FechaDeNacimiento= @fechaDeNacimiento,Nacionalidad= @nacionalidad where id= @id; update Direccion set Calle= @calle, numero= @numero, Localidad= @localidad, Provincia= @provincia where id=@idDireccion;");
+                datos.setearParametros("@fechaDeNacimiento",p.fechaDeNacimiento );
+                datos.setearParametros("@nacionalidad",p.Nacionalidad );
+                datos.setearParametros("@id",p.Id );
+                datos.setearParametros("@calle",p.Direccion.Calle );
+                datos.setearParametros("@numero",p.Direccion.Numero );
+                datos.setearParametros("@localidad",p.Direccion.Localidad );
+                datos.setearParametros("@provincia",p.Direccion.Provincia );
+                datos.setearParametros("@idDireccion",p.Direccion.Id );
+                datos.EjecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public void agregar(Persona p)
+        {
+            try
+            {
+                datos.setearConsulta("insert into Direccion values (@calle,@numero,@localidad,@provincia)");
+                datos.setearParametros("@calle", p.Direccion.Calle);
+                datos.setearParametros("@numero", p.Direccion.Numero);
+                datos.setearParametros("@localidad", p.Direccion.Localidad);
+                datos.setearParametros("@provincia", p.Direccion.Provincia);
+                datos.EjecutarAccion();
+                datos.setearConsulta("select max(id) id from Direccion");
+                datos.EjecutarLectura();
+                int idDireccion = (int)datos.Lector["id"];
+                datos.setearConsulta("insert into Persona values (@nombre,@apellido,@dni,@fechaDeNacimiento,@nacionalidad,@idDireccion)");
+                datos.setearParametros("@nombre", p.Nombre);
+                datos.setearParametros("@apellido", p.Apellido);
+                datos.setearParametros("@dni", p.Dni);
+                datos.setearParametros("@fechaDeNacimiento", p.fechaDeNacimiento);
+                datos.setearParametros("@nacionalidad", p.Nacionalidad);
+                datos.setearParametros("@idDireccion", idDireccion);
+                datos.EjecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

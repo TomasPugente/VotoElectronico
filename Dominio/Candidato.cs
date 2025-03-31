@@ -10,6 +10,7 @@ namespace Dominio
     {
         public int IdCandidato { get; set; }
         public DateTime FechaPostulacion { get; set; }
+        public String ImagenCandidato { get; set; }
 
     }
 }
